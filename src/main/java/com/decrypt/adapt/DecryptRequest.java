@@ -22,6 +22,7 @@ import java.lang.reflect.Type;
 public class DecryptRequest extends RequestBodyAdviceAdapter {
     @Autowired
     EncryptProperties encryptProperties;
+
     @Override
     public boolean supports(MethodParameter methodParameter, Type targetType, Class<? extends HttpMessageConverter<?>> converterType) {
         return methodParameter.hasMethodAnnotation(Decrypt.class) || methodParameter.hasParameterAnnotation(Decrypt.class);
